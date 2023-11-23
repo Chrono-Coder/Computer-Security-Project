@@ -1,0 +1,12 @@
+{
+  "name": "hackapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "python -m http.server 8000"
+  },
+  "author": "",
+  "license": "ISC"
+}
